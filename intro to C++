@@ -1,0 +1,24 @@
+#include <iostream>
+using namespace std;
+
+int main()
+{
+	char mycharacter;
+	mycharacter = 'y';
+
+	int myint;
+	myint = 13;
+
+	cout << mycharacter << endl;
+	cout << myint << endl;
+	cout << "You Died!\n";
+
+	mycharacter = 'a';
+	myint = 12;
+
+	cout << mycharacter << endl;
+	cout << myint << endl;
+
+
+	system("pause");
+}

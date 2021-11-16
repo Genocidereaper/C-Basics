@@ -1,0 +1,31 @@
+#include <iostream>
+using namespace std;
+
+void welcome() {
+	cout << "Welcome to my program"<<endl;
+}
+
+void printNumber(int num1) {
+	cout << num1 << endl;
+}
+int add(int a, int b) {
+	int c;
+	c = a + b;
+	return c;
+}
+
+int main() {
+	int mynum = 33;
+	int mynum1(12);
+	welcome();
+	printNumber(5);
+	printNumber(mynum);
+	printNumber(mynum1);
+	int d = add(2, 3);
+	int e = add(mynum, mynum1);
+	//cout << d <<endl;
+	//cout << e << endl;
+	printNumber(d);
+	printNumber(e);
+	system("pause");
+}

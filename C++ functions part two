@@ -1,0 +1,36 @@
+#include <iostream>
+using namespace std;
+
+void welcome(); // if not delcared will be an issue
+
+char getYesNo();
+
+void printResponse(char a);
+
+void AskYesOrNoQuestion();
+
+int main() {
+	// asks user to enter y or n than returns the response
+	AskYesOrNoQuestion();
+
+	system("pause");
+}
+
+void welcome() {
+	cout << "Welcome\n";
+}
+char getYesNo() {
+	cout << ("Please answer: Y or N.\n");
+
+	char myChar;
+	cin >>myChar;
+	return myChar;
+}
+void printResponse(char a) {
+	cout << "Your Answer was: " << a << endl;
+}
+void AskYesOrNoQuestion() {
+	welcome();
+	char answer = getYesNo();
+	printResponse(answer);
+}

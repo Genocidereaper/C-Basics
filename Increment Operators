@@ -1,1 +1,49 @@
-#inclue
+#include <iostream>
+using namespace std;
+void print(l){
+cout<<l<<endl;
+}
+int main(){
+  int i=3;
+  
+  i+=3;
+  
+  print(i);
+  
+  i-=2;
+  
+  print(i);
+  
+  i*=3;
+  
+  print(i);
+  
+  i/=2;
+  
+  print(i);
+  //float pratice here
+  float j= 2.0;
+  
+  float k = i/j; // dividing integer by float leads to float the same is also true
+  
+  print(k);
+   //plus plus here and so on
+   
+   int z=3;
+   
+   --z;
+   
+   print(z);
+ 
+ cout<< z--<<endl;
+ 
+ print(z);
+ 
+ int l = ++z;
+ 
+ print(z); //should see that both have changed use post increment to prevent both changing on you
+ 
+ print(l);
+ 
+system("pause");
+}

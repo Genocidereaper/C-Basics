@@ -1,8 +1,29 @@
-#include <iostream>
+#include <string>
 using namespace std;
+//& makes something a reference for functions it makes them actually receive the variable
+void ChangeStr(string& str);
+
 int main()
 {
+	string myStr = "Druid";
 
+	/*string& myref = myStr;
 
+	cout << myStr << endl;
+	cout << myref << endl;
+
+	myref += " Mechanics";
+	
+	cout << myStr << endl;
+	cout << myref << endl;
+	*/
+	ChangeStr(myStr);
+	cout << myStr << endl;
+	
 	system("pause");
 }
+void ChangeStr(string& str) {
+	str += "!";
+	// now that function has a reference type we can no longer feed in string literals
+}
+// its one or the other cant use refernces and literals

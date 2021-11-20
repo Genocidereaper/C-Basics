@@ -1,0 +1,28 @@
+#include <iostream>
+using namespace std;
+int main() {
+	double NumberPi = 3.14159;
+	double NumberE = 2.71828128;
+
+	bool Condition = true;
+
+	int count = 0;
+	do
+	{
+		cout << "The number PI is: " << NumberPi << endl;
+		cout << "The number E is:  " << NumberE << endl;
+		cout << "The number count is: " << count << endl;
+		cout << "Pi + E*count =  " << NumberPi + NumberE * count<<endl;
+
+		count++;
+		if (count <= 100) {
+			Condition = true;
+		}
+		else {
+			Condition = false;
+		}
+	} while (Condition);
+	// do while loops need a ; after while where while loops do not need one
+
+	system("pause");
+}

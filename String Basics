@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+//using namespace std;
+
+int main()
+{
+	//below is a string in c
+	//char MyCstring[5] = { 'D', 'o', 'g', 's','\0' }; == char MyCstring="Dogs";
+	
+	//cout << MyCstring << endl;
+	
+	std:: string mystring;
+	
+	mystring = "My Dog's name is:";
+
+	std::string first = "Scooby ";
+
+	std::string last = "Garbutt";
+	mystring += first; // can also add first and last at the same time += (first + last);
+	mystring += last;
+
+	std::cout << mystring << std::endl;
+
+
+	system("pause");
+}

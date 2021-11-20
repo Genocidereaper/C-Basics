@@ -1,6 +1,23 @@
 #include <iostream>
 using namespace std;
+// for for loop I++ and ++I are both the same
 int main() {
+	//you can declare the ints for forloop outside but most of the time its better to declare it inside the forloop
+	
+	for (int i=0; i <= 10; i++) 
+	{
+		for (int j = 0; j <= 10; j++) 
+		{
+			//does inner loop first so j goes to 10 first than i is incremeneted time of the forloop is quadrtic time
+			for (int k = 0; k <= 10; k++) 
+			{
+				cout << "i = " << i << ", j = " << j << ", k =" <<k << endl;
+			}
+			
+		}
+	}
+
+	cout << endl;
 
 	system("pause");
 }

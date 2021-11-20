@@ -2,3 +2,17 @@
 using namespace std;
 // this is for do while and while loops
 // difference is a do while will do the first condition no mater if the while condition is true or not
+int main() {
+	int myint(0);
+	int count = 0;
+
+	while (count<=10) 
+	{
+		cout << myint << endl;
+		count++;
+		myint++;
+		
+	}
+
+	system("pause");
+}

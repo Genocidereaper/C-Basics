@@ -2,9 +2,76 @@
 #include <string>
 using namespace std;
 
+class Animal 
+{
+public:
+	Animal();
+	Animal(string Name, int Age, int numberoflimbs);
+
+	string name;
+	int age;
+	int NumberOfLimbs;
+
+	void Report();
+};
+
+class Dog : public Animal 
+{
+	//everytime you create a new class it will be private
+	public:
+		Dog();
+		Dog(string Name, int Age, int numberoflimbs);
+
+		void Speak();
+
+};
+
 int main()
 {
+	Dog dog("Scooby", 4,5);
 
+	dog.Speak();
 
 	system("pause");
+}
+Animal::Animal() 
+{
+	cout << "An Animal is born!\n";
+
+	name = "Default";
+	age = 2;
+	NumberOfLimbs = 4;
+}
+Animal::Animal(string Name, int Age, int numberoflimbs): 
+	name(Name), age(Age), NumberOfLimbs(numberoflimbs)
+{
+	Report();
+}
+/*
+Animal::Animal(string Name, int Age, int numberoflimbs) 
+{
+	name = Name;
+	age = Age;
+	NumberOfLimbs = numberoflimbs;
+}*/
+
+void Animal::Report()
+{
+	cout << endl;
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Number Of Limbs: " << NumberOfLimbs << endl;
+	cout << endl;
+}
+Dog :: Dog()
+{
+	cout << "A dog is born!\n";
+}
+Dog::Dog(string Name, int Age, int numberoflimbs)
+{
+	Animal(Name, Age, numberoflimbs);
+}
+void Dog::Speak()
+{
+	cout << "Woof!\n";
 }

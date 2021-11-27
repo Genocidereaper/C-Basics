@@ -1,3 +1,100 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+class Creature 
+{
+public:
+	Creature();
+
+	void SetName(string name);
+	string Getname();
+	
+	void TakeDamage(float dmg);
+	float GetHealth();
+	void SetHealth(float health);
+
+private :	
+	string Name;
+	float Health;
+
+protected:
+	int NumberOfLimbs;
+
+
+};
+
+class Goblin : public Creature //if made private can only be accessed in that class child class can not access any private things
+{
+public:
+	Goblin();
+	int GetNumberOfLimbs();
+};
+
+
+int main()
+{
+	Creature Igor;
+
+	Igor.SetName("Igor");
+
+	cout << Igor.Getname() << endl;
+	cout << Igor.GetHealth() << endl;
+
+	Igor.TakeDamage(100.f);
+
+	Goblin Gobby;
+
+	cout << Gobby.Getname() << endl;
+	cout << Gobby.GetNumberOfLimbs() << endl;
+
+	system("pause");
+}
+Creature::Creature() 
+{
+	cout << "A Creature has been created.\n";
+	Health = 100.f;
+}
+void Creature::SetName(string name)
+{
+	Name = name;
+}
+string Creature::Getname()
+{
+	return Name;
+}
+void Creature::TakeDamage(float dmg) {
+	float total;
+	total = Health - dmg;
+	if (total<= 0.f)
+	{
+		cout <<"Your creature " <<Getname()<< " has died!" << endl;
+		Health -= dmg;
+	}
+	else
+	{
+		Health -= dmg;
+	}
+	cout << "Health: " << GetHealth() << endl;
+}
+float Creature::GetHealth()
+{
+	return Health;
+}
+void Creature::SetHealth(float health)
+{
+	Health = health;
+}
+
+Goblin::Goblin()
+{
+	NumberOfLimbs = 5;
+
+	// cant access private
+	SetName("Gobby");
+
+}
+int Goblin::GetNumberOfLimbs()
+{
+	return NumberOfLimbs;
+}

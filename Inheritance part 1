@@ -2,9 +2,54 @@
 #include <string>
 using namespace std;
 
+class Animal 
+{
+public:
+	Animal();
+	Animal(string Name, int Age, int numberoflimbs);
+
+	string name;
+	int age;
+	int NumberOfLimbs;
+
+	void Report();
+};
+
 int main()
 {
+	Animal animal;
 
+	animal.Report();
+	
+	Animal animal_2("Cheetah", 7, 5);
+
+	animal_2.Report();
 
 	system("pause");
+}
+Animal::Animal() 
+{
+	cout << "An Animal is born!\n";
+
+	name = "Default";
+	age = 2;
+	NumberOfLimbs = 4;
+}
+Animal::Animal(string Name, int Age, int numberoflimbs): name(Name), age(Age), NumberOfLimbs(numberoflimbs)
+{
+	Report();
+}
+/*
+Animal::Animal(string Name, int Age, int numberoflimbs) 
+{
+	name = Name;
+	age = Age;
+	NumberOfLimbs = numberoflimbs;
+}*/
+
+void Animal::Report()
+{
+	cout << "Name: " << name << endl;
+	cout << "Age: " << age << endl;
+	cout << "Number Of Limbs: " << NumberOfLimbs << endl;
 }

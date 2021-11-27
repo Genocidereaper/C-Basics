@@ -2,7 +2,66 @@
 #include <string>
 using namespace std;
 
+struct Container
+{
+	string Name; // if not using namespace std would have to be std::string Name;
+
+	int X;
+	int Y;
+	int Z;
+};
+
 int main() {
+	int myint = 2;
+	int* ptr;
+	ptr = &myint;
+	cout << ptr << endl;
+	cout << *ptr << endl;
+	
+
+	int a = 100;
+
+	int* aPtr;
+	aPtr = &a;
+
+	cout << aPtr << endl;
+	cout << *aPtr << endl;
+
+
+	int b = 50;
+	aPtr = &b;
+
+	cout << aPtr << endl;
+	cout << *aPtr << endl;
+
+	int numbers[] = { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+	int* NumPtr = numbers; //pointer must be same type as what they are refferencing
+
+	cout << *NumPtr << endl;
+
+	NumPtr++;
+
+	cout << *NumPtr << endl;
+	
+	NumPtr++;
+
+	cout << *NumPtr << endl;
+
+	NumPtr += 3;
+
+	cout << *NumPtr << endl;
+
+	Container container = { "Sam", 5, 6, 7 };
+
+	Container* PtrToCont = &container;
+
+	cout<< (*PtrToCont).Name<< endl;
+	cout << (*PtrToCont).X << endl;
+	//must use () or else there were be an error  as VS works right to left
+	cout << (*PtrToCont).Y << endl;
+	cout << (*PtrToCont).Z<< endl;
+	cout << PtrToCont->Name << endl; //this is a cleaner way to reffer to the struct with pointers no need to dereffrence either use this one cause it is cleaner
 
 	system("pause");
 }

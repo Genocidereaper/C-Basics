@@ -1,0 +1,76 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+struct Cat 
+{
+	Cat();
+	int age;
+	float health;
+
+	void Meow();
+};
+
+Cat::Cat()
+{
+	cout << "A new cat is born!" << endl;
+	Meow();
+}
+// structs are just like classes they can have constructors
+
+void Cat::Meow() {
+	age = 9;
+	health = 75.f;
+	cout << "Meow I am a cat" << endl;
+	cout << "My Age is: " << age << " .\n";
+	cout << "My Health is: " << health << " .\n";
+}
+class Dog
+{
+public:
+
+	Dog();
+
+	string name;
+	int age;
+	float health;
+	
+	void Bark();
+};
+
+int main()
+{
+	Dog dog;
+	//dog.Bark();
+
+	cout << dog.name << endl;
+	cout << dog.age << endl;
+	cout << dog.health << endl;
+	
+	dog.name = "Scooby";
+	dog.age = 3;
+	dog.health = 1000.f;
+
+	cout << dog.name << endl;
+	cout << dog.age << endl;
+	cout << dog.health << endl;
+
+	Cat cat;
+
+	cat.age += 5;
+
+	cat.Meow();
+
+	system("pause");
+}
+Dog:: Dog()
+{
+	Bark();
+	name = "Default name";
+	age = 10;
+	health = 100.f;
+}
+void Dog::Bark() {
+	cout << "Woof!" << endl;
+}
+// :: is the scope operator

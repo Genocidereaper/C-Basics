@@ -1,9 +1,45 @@
 #include <iostream>
 using namespace std;
 
-int main()
+class P
+{
+public:
+
+};
+class A : virtual public P
 {
 
+};
+class B : virtual public P
+{
 
+};
+class C : public A, public B
+{
+
+};
+int main()
+{
+	// implict type conversion
+	float f = 5.0;
+	int i = f;
+	// Explict type conversion casting
+	// C-style casting
+	float f1 = 3.52;
+	int i1 = (int)(f);
+	// Casting in C++
+	// dynamic_cast:
+	// Derivation chain
+	// only polymorphic types 
+	// -at least one virtual member function
+	
+	P* p;
+	A* a;
+	B* b;
+	C* c = new C;
+	p = dynamic_cast<P*>(c); // not nesscary
+	p = c; // works fine
+	a = dynamic_cast<A*>(p); //downcast
+	a = dynamic_cast<A*>(b); // cross cast
 	system("pause");
 }

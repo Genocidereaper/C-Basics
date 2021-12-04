@@ -1,7 +1,58 @@
 #include <iostream>
 using namespace std;
+// static variables in functions
+
+void update_count() 
+{
+	static int count = 0;
+	count++;
+	cout << "Count is = " << count << endl;
+}
+
+// static class objects
+
+class Dog { };
+
+// Static Data Member in class
+class Creature
+{
+public:
+	static int creature_count;
+	Creature()
+	{
+		creature_count++;
+		cout << "A new Creature is born!\n";
+	}
+	void PrintCreatureCount()
+	{
+		cout << "there are " << creature_count << " Creatures.\n";
+	}
+};
+// int Creature::creature_count=0; cannot re-define but opertaions can be made on it
+int Creature::creature_count = 0;
+// Static member functions
+class Announcer
+{
+public:
+	static void Announce()
+	{
+		cout << "Welcome!\n";
+	}
+};
 int main()
 {
-	cout << "Testing\n";
+	if (true) 
+	{
+		static Dog dog;
+		cout << "Dog is static.\n";
+	}
+	for (int i = 0; i < 10; i++) 
+	{
+		update_count();
+	}
+	Creature tod;
+	tod.PrintCreatureCount();
+
 	system("pause");
+	Announcer::Announce();
 }

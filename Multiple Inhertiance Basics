@@ -1,9 +1,54 @@
 #include <iostream>
 using namespace std;
 
-int main()
+class P
+{
+public:
+	void f()
+	{
+		cout << "testing\n";
+	}
+};
+class A : virtual public P
+{
+	
+};
+class B : virtual public P
 {
 
+};
+class C : public B, public A
+{
+
+};
+// virtual inhertiance also solves the issue of two functions
+
+int main()
+{
+	C c;
+	c.f();
+	// problem c inherits to f functions one from A and one from B
+	// in order to fix this problem call function like c.A::f(); for A's function and c.B::f(); for B's function
 
 	system("pause");
 }
+/*
+class P
+{
+public:
+	void f(){}
+};
+class A : public P
+{
+
+};
+class B : public P
+{
+
+};
+class C : public B, public A
+{
+
+};
+
+*/

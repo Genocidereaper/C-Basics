@@ -1,3 +1,54 @@
 #include <iostream>
 #include <string>
 using namespace std;
+
+struct Character
+{
+
+	Character();
+	/* 
+	Character (){
+		Name = "DIO";
+		Health = 100.f;
+	} defined inside of the struct*/
+	void PrintHealth();
+
+	string Name;
+	float Health;
+
+};
+// the bottom can be placed below the code or below struct
+
+int main()
+{
+	/*
+	int* p = new int; declaring a new int on the heap
+	*p=3; giving it a value
+	delete p; dealing with memory leak if we reassign p's value
+	p = nullptr; or p=0; dealing with a dangling pointer or a pointer which points to nothing
+	
+	*/
+	for (int i = 0; i < 10; i++) {
+		Character* PtrToChar = new Character(); // doesnt go out of scope or get deleted automaticaly memory leak
+		//PtrToChar->Name = "Neo";
+
+		cout << PtrToChar->Name << endl;
+		PtrToChar->PrintHealth();
+
+		delete PtrToChar;
+	}
+	/*cout << PtrToChar->Name << endl;
+	cout << PtrToChar->Health << endl;
+	*/
+
+	system("pause");
+}
+
+Character::Character() {
+	Name = "DIO";
+	Health = 100.f;
+}
+void Character::PrintHealth()
+{
+	cout << "Health = " << Health << endl;
+}

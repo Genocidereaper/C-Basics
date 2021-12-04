@@ -1,2 +1,84 @@
 #include <iostream>
 using namespace std;
+
+void AddToCount()
+{
+	static int count=0;
+	count++;
+	cout << count << endl;
+}
+class Item
+{
+public:
+	Item()
+	{
+		cout << "An item has been created!\n";
+	}
+	~Item()
+	{
+		cout << "An item has been destroyed!\n";
+	}
+};
+class Critter
+{
+public:
+	Critter()
+	{
+		cout<<"A critter is born!\n";
+		++CritterCount;
+	}
+	~Critter()
+	{
+		cout << "A critter has died!\n";
+		--CritterCount;
+	}
+
+	static void AnnounceCount()
+	{
+		cout << CritterCount << endl;
+	}
+
+	static int CritterCount; //static variable members must be initzialed outside of the class
+
+
+};
+
+int Critter::CritterCount = 0;
+
+int main()
+{
+	AddToCount();
+	AddToCount(); //second function call the initalization of count is ignored cause you cannot reintizale static variables
+	
+	for (int i = 0; i < 100; i++)
+	{
+		AddToCount();
+	}
+
+	//count--; wont work cannot access
+	 //{
+		//static Item item;
+	//}
+	
+	//{ Item item;} will be destroyed as the scope of the block has ended
+	
+	Critter::CritterCount = 13;
+
+	cout << Critter::CritterCount << endl;
+	
+	Critter::AnnounceCount();
+
+	Critter crit;
+	Critter::AnnounceCount();
+
+	Critter crit2;
+	Critter::AnnounceCount();
+	
+	Critter* crit3 = new Critter;
+	Critter::AnnounceCount();
+
+	delete crit3;
+	Critter::AnnounceCount();
+
+	system("pause"); // destructor will be called after this
+}

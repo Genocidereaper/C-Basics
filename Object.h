@@ -4,8 +4,5 @@ class Object
 public:
 	virtual void BeginPlay();
 
-	void ObjectFunction()
-	{
-		cout << "ObjectFunction() called.\n\n";
-	}
+	void ObjectFunction();
 };
